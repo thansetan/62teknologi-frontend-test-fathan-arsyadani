@@ -6,13 +6,14 @@ import { Container, Box, Typography, CircularProgress } from '@mui/material'
 import BusinessData from './BusinessData'
 import Reviews from './Reviews'
 import OpenHours from './OpenHours'
+import NotFound from './NotFound'
 
 const Business = () => {
     const { businessAlias } = useParams() as { businessAlias: string }
     const { isLoading, business, error } = useBusiness({ businessAlias })
 
     return error ? (
-        <h1>{error}</h1>
+        <h1>{error.includes('404') ? <NotFound /> : error}</h1>
     ) : isLoading ? (
         <Box
             sx={{

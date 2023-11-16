@@ -3,6 +3,7 @@ import Rating from '@mui/material/Rating'
 interface RatingComponentProps {
     rating: number
 }
+
 export default function RatingComponent({ rating }: RatingComponentProps) {
     return (
         <Rating

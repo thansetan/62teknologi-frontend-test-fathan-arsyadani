@@ -31,12 +31,8 @@ const OpenHours = ({ openHours }: OpenHoursProps) => {
             <Table size="small">
                 <TableHead>
                     <TableRow>
-                        {openHours.map((openHour) => (
-                            <TableCell
-                                key={openHour.day}
-                                colSpan={2}
-                                align="center"
-                            >
+                        {openHours.map((openHour, ix) => (
+                            <TableCell key={ix} colSpan={2} align="center">
                                 <Typography fontWeight="bold">
                                     {Days[openHour.day]}
                                 </Typography>
@@ -63,8 +59,8 @@ const OpenHours = ({ openHours }: OpenHoursProps) => {
 
                 <TableBody>
                     <TableRow>
-                        {openHours.map((openHour) => (
-                            <Fragment key={openHour.day}>
+                        {openHours.map((openHour, ix) => (
+                            <Fragment key={ix}>
                                 <TableCell>
                                     {formatTime(openHour.start)}
                                 </TableCell>

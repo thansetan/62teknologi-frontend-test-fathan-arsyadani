@@ -8,7 +8,12 @@ const Businesses = () => {
     const [sortBy, setSortBy] = useState('best_match')
     const [openNow, setOpenNow] = useState(false)
 
-    const location = useLocation().state.location
+    let location
+    try {
+        location = useLocation().state.location
+    } catch (error) {
+        location = 'New York'
+    }
 
     return (
         <Container>

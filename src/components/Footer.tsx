@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <AppBar
             position="static"
-            color="primary"
+            color="default"
             sx={{
                 top: 'auto',
                 bottom: 0,

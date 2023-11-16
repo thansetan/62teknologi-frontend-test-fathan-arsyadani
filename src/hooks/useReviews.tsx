@@ -13,7 +13,6 @@ const useReviews = ({ businessAlias }: useReviewProps) => {
     const [totalReviews, setTotalReviews] = useState(0)
 
     const reqURL = `https://api.yelp.com/v3/businesses/${businessAlias}/reviews` // only returns 3 reviews
-    console.log(reqURL)
     useEffect(() => {
         axios
             .get(`http://cors-anywhere.herokuapp.com/${reqURL}`, {
@@ -25,7 +24,6 @@ const useReviews = ({ businessAlias }: useReviewProps) => {
                 },
             })
             .then((response) => {
-                console.log('TRIGGERED')
                 setReviews(response.data.reviews)
                 setTotalReviews(response.data.total)
                 setLoading(false)

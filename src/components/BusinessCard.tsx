@@ -13,6 +13,7 @@ import {
 
 interface BusinessCardProps {
     business: Business
+    bgColor: string
 }
 
 const Category = styled('div')(({ theme }) => ({
@@ -24,12 +25,13 @@ const Category = styled('div')(({ theme }) => ({
     paddingRight: theme.spacing(1),
 }))
 
-const BusinessCard = ({ business }: BusinessCardProps) => {
+const BusinessCard = ({ business, bgColor }: BusinessCardProps) => {
     return (
         <Card
             sx={{
                 display: 'flex',
                 maxHeight: { xs: '100%', md: '200px' },
+                backgroundColor: bgColor,
             }}
         >
             <Box

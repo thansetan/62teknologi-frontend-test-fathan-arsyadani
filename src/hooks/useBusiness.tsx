@@ -25,7 +25,6 @@ const useBusiness = ({ businessAlias }: useBusinessProps) => {
                 }
             )
             .then((response) => {
-                console.log('TRIGGERED')
                 setBusiness(response.data)
                 setLoading(false)
                 setError('')
